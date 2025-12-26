@@ -1,0 +1,32 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Setup Telraam",
+        "description": "Enter your Telraam segment ID",
+        "data": {
+          "segment_id": "Segment ID"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect to Telraam API",
+      "invalid_segment_id": "Invalid segment ID",
+      "unknown": "Unknown error"
+    },
+    "abort": {
+      "already_configured": "This segment ID is already configured"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Telraam Options",
+        "description": "Configure update interval",
+        "data": {
+          "scan_interval": "Update interval (seconds)"
+        }
+      }
+    }
+  }
+}

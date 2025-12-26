@@ -1,0 +1,11 @@
+{
+  "domain": "telraam",
+  "name": "Telraam Traffic Counter",
+  "codeowners": ["@tsgoff"],
+  "config_flow": true,
+  "documentation": "https://github.com/tsgoff/telraam-ha",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/tsgoff/telraam-ha/issues",
+  "requirements": [],
+  "version": "1.0.0"
+}

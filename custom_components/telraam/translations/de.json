@@ -1,0 +1,32 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Telraam einrichten",
+        "description": "Geben Sie Ihre Telraam Segment-ID ein",
+        "data": {
+          "segment_id": "Segment-ID"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Verbindung zur Telraam API fehlgeschlagen",
+      "invalid_segment_id": "Ungültige Segment-ID",
+      "unknown": "Unbekannter Fehler"
+    },
+    "abort": {
+      "already_configured": "Diese Segment-ID ist bereits konfiguriert"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Telraam Optionen",
+        "description": "Aktualisierungsintervall anpassen",
+        "data": {
+          "scan_interval": "Aktualisierungsintervall (Sekunden)"
+        }
+      }
+    }
+  }
+}
