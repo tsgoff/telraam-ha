@@ -107,9 +107,43 @@ class TelraamDataUpdateCoordinator(DataUpdateCoordinator):
                         traffic_data = data["data"]
                         result = {}
                         
-                        for key in ["car", "bike", "pedestrian", "heavy"]:
+                        # Verkehrszählungen
+                        for key in ["car", "bike", "pedestrian", "heavy", "night"]:
                             if key in traffic_data and traffic_data[key]:
                                 # Nimm den letzten (aktuellsten) Wert
+                                result[key] = traffic_data[key][-1]
+                            else:
+                                result[key] = 0
+                        
+                        # Geschwindigkeitsverteilungen
+                        for key in ["speedZero", "speedTen", "speedTwenty", "speedThirty", 
+                                    "speedFourty", "speedFifty", "speedSixty", "speedSeventy"]:
+                            if key in traffic_data and traffic_data[key]:
+                                # Nimm den letzten (aktuellsten) Wert
+                                result[key] = traffic_data[key][-1]
+                            else:
+                                result[key] = 0
+                        
+                        # Fahrzeugtypen (Mode)
+                        for key in ["mode_bicycle", "mode_bus", "mode_car", "mode_lighttruck",
+                                    "mode_motorcycle", "mode_pedestrian", "mode_stroller",
+                                    "mode_tractor", "mode_trailer", "mode_truck"]:
+                            if key in traffic_data and traffic_data[key]:
+                                result[key] = traffic_data[key][-1]
+                            else:
+                                result[key] = 0
+                        
+                        # Durchschnittswerte
+                        for key in ["pedestrianAvg", "bikeAvg", "carAvg", "heavyAvg"]:
+                            if key in traffic_data and traffic_data[key]:
+                                result[key] = traffic_data[key][-1]
+                            else:
+                                result[key] = 0
+                        
+                        # Prozent des typischen Verkehrs
+                        for key in ["pedestrianPctOfTypical", "bikePctOfTypical", 
+                                    "carPctOfTypical", "heavyPctOfTypical"]:
+                            if key in traffic_data and traffic_data[key]:
                                 result[key] = traffic_data[key][-1]
                             else:
                                 result[key] = 0

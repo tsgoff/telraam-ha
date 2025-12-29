@@ -36,11 +36,12 @@ Restart Home Assistant so the integration is recognized.
 
 ### Step 4: Done!
 
-The integration automatically creates 4 sensors:
-- Telraam Cars (Autos)
-- Telraam Bicycles (Fahrräder)
-- Telraam Pedestrians (Fußgänger)
-- Telraam Heavy Vehicles (Schwere Fahrzeuge)
+The integration automatically creates 37 sensors:
+- 5 Basic Traffic Counts (Cars, Bicycles, Pedestrians, Heavy Vehicles, Night Traffic)
+- 8 Speed Distribution Sensors (percentage in different speed ranges)
+- 10 Detailed Vehicle Type Sensors (bicycle, bus, car, light truck, motorcycle, pedestrian, stroller, tractor, trailer, truck)
+- 4 Average Traffic Sensors
+- 4 Typical Traffic Percentage Sensors
 
 ## Where to Find Your Segment ID?
 

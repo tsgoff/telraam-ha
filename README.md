@@ -6,11 +6,12 @@ This custom integration allows you to integrate Telraam V2 traffic counter data 
 
 - ✅ Easy setup through Home Assistant UI
 - ✅ Automatic detection and validation of segment ID
-- ✅ 4 sensors per Telraam device:
-  - 🚗 Cars
-  - 🚲 Bicycles
-  - 🚶 Pedestrians
-  - 🚛 Heavy vehicles
+- ✅ 37 sensors per Telraam device:
+  - 🚗 5 basic traffic counts (cars, bikes, pedestrians, heavy vehicles, night traffic)
+  - 📊 8 speed distribution sensors (0-10, 10-20, 20-30, 30-40, 40-50, 50-60, 60-70, >70 km/h)
+  - 🚦 10 detailed vehicle type sensors (bicycle, bus, car, light truck, motorcycle, pedestrian, stroller, tractor, trailer, truck)
+  - 📈 4 average traffic sensors
+  - 📊 4 typical traffic percentage sensors
 - ✅ Customizable update interval (default: 5 minutes)
 - ✅ Support for long-term statistics
 - ✅ Multilingual (German & English)
@@ -61,10 +62,46 @@ You can find your Telraam segment ID:
 
 After installation, the following sensors will be available:
 
+**Basic Traffic Count Sensors:**
 - `sensor.telraam_autos` - Number of cars today
 - `sensor.telraam_fahrrader` - Number of bicycles today
 - `sensor.telraam_fussganger` - Number of pedestrians today
 - `sensor.telraam_schwere_fahrzeuge` - Number of heavy vehicles today
+- `sensor.telraam_nachtverkehr` - Number of vehicles at night
+
+**Speed Distribution Sensors (in %):**
+- `sensor.telraam_geschwindigkeit_0_10_km_h` - Traffic 0-10 km/h
+- `sensor.telraam_geschwindigkeit_10_20_km_h` - Traffic 10-20 km/h
+- `sensor.telraam_geschwindigkeit_20_30_km_h` - Traffic 20-30 km/h
+- `sensor.telraam_geschwindigkeit_30_40_km_h` - Traffic 30-40 km/h
+- `sensor.telraam_geschwindigkeit_40_50_km_h` - Traffic 40-50 km/h
+- `sensor.telraam_geschwindigkeit_50_60_km_h` - Traffic 50-60 km/h
+- `sensor.telraam_geschwindigkeit_60_70_km_h` - Traffic 60-70 km/h
+- `sensor.telraam_geschwindigkeit_70_km_h` - Traffic >70 km/h
+
+**Detailed Vehicle Type Sensors:**
+- `sensor.telraam_fahrrader_modus` - Bicycles (mode detection)
+- `sensor.telraam_busse` - Buses
+- `sensor.telraam_pkw_modus` - Cars (mode detection)
+- `sensor.telraam_leichte_lkw` - Light trucks
+- `sensor.telraam_motorrader` - Motorcycles
+- `sensor.telraam_fussganger_modus` - Pedestrians (mode detection)
+- `sensor.telraam_kinderwagen` - Strollers
+- `sensor.telraam_traktoren` - Tractors
+- `sensor.telraam_anhanger` - Trailers
+- `sensor.telraam_lkw` - Trucks
+
+**Average Traffic Sensors:**
+- `sensor.telraam_fussganger_durchschnitt` - Pedestrians average
+- `sensor.telraam_fahrrader_durchschnitt` - Bicycles average
+- `sensor.telraam_autos_durchschnitt` - Cars average
+- `sensor.telraam_schwere_fahrzeuge_durchschnitt` - Heavy vehicles average
+
+**Typical Traffic Percentage Sensors:**
+- `sensor.telraam_fussganger_vom_durchschnitt` - Pedestrians % of typical
+- `sensor.telraam_fahrrader_vom_durchschnitt` - Bicycles % of typical
+- `sensor.telraam_autos_vom_durchschnitt` - Cars % of typical
+- `sensor.telraam_schwere_fahrzeuge_vom_durchschnitt` - Heavy vehicles % of typical
 
 ### Example Automation
 
@@ -187,6 +224,11 @@ MIT License
 
 ### Version 1.0.0
 - Initial release
-- Support for all 4 traffic types
+- Support for all traffic types (cars, bikes, pedestrians, heavy vehicles, night traffic)
+- Speed distribution sensors (8 speed ranges)
+- Detailed vehicle type detection (10 types: bicycle, bus, car, light truck, motorcycle, pedestrian, stroller, tractor, trailer, truck)
+- Average traffic sensors (4 types)
+- Typical traffic percentage sensors (4 types)
 - Config Flow integration
 - German and English translations
+- Total: 37 sensors
